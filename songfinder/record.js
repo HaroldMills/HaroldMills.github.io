@@ -5,6 +5,9 @@ let _audioInputDevices = null;
 let _recording = false;
 let _audioContext = null;
 
+// As of 2019-03, AudioContext is still called webkitAudioContext on Safari.
+const AudioContext = window.AudioContext || window.webkitAudioContext;
+
 
 async function _test() {
 
